@@ -1,0 +1,112 @@
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="theme-color" content="#ffd4b3" />
+        <title>Nothing Goes Away</title>
+        <link rel="stylesheet" href="style.css?v=9" />
+        <script defer src="p5.min.js"></script>
+        <script defer src="sketch.js?v=10"></script>
+    </head>
+    <body>
+        <canvas id="ambient" aria-hidden="true"></canvas>
+        <main id="experience" aria-label="Nothing Goes Away generative artwork">
+            <div id="canvas-holder"></div>
+            <div class="frame-ui">
+                <nav id="landing-nav" class="landing-nav" aria-label="Landing page navigation">
+                    <button id="explore" class="explore-button"><span>EXPLORE</span></button
+                    ><button id="about-open" class="about-button"><span>ABOUT</span></button>
+                </nav>
+            </div>
+        </main>
+        <dialog id="about" aria-labelledby="about-heading">
+            <div class="panel">
+                <header>
+                    <div>
+                        <span class="eyebrow">THE STORY BEHIND THE ARTWORK</span>
+                        <h1 id="about-heading">Nothing Goes Away<span>.</span></h1>
+                        <p class="tagline">It doesn't disappear. It only changes form.</p>
+                    </div>
+                    <button id="about-close" aria-label="Close about panel">×</button>
+                </header>
+                <div class="panel-grid">
+                    <section>
+                        <h2>THE PROJECT</h2>
+                        <dl>
+                            <dt>Group name</dt>
+                            <dd>Whatever</dd>
+                            <dt>Individual student</dt>
+                            <dd>Nguyen Ngoc Thanh Thao<br />s4057247</dd>
+                        </dl>
+                        <h2>GROUP MEMBERS</h2>
+                        <p>
+                            Tran Anh Thu - s3981121<br />Vu Ky Anh - s4044677<br />Nguyen Thi Kim
+                            Loan - 4031500<br />Nguyen Ngoc Thanh Thao - s4057247
+                        </p>
+                        <h2>COURSE INFORMATION</h2>
+                        <p>COMM2754<br />Digital Media Specialisation 1</p>
+                        <p>
+                            RMIT University Vietnam, Saigon South Campus, School of Communication
+                            and Design, Digital Media Program
+                        </p>
+                        <p>25 November 2026<br />Course time: <strong>Semester 3/2026</strong></p>
+                    </section>
+                    <section>
+                        <div class="sdg">
+                            <span>SDG 12</span>
+                            <h2>Responsible Consumption and Production</h2>
+                            <p>Ensure sustainable consumption and production patterns.</p>
+                        </div>
+                        <blockquote>
+                            “For the great majority of these billions of tons of Stuff, there is no
+                            ‘away.’ Period.”<cite>- Annie Leonard, <i>The Story of Stuff</i></cite>
+                        </blockquote>
+                        <p class="reference-note">
+                            Leonard A (2010)
+                            <i
+                                >The story of stuff: how our obsession with stuff is trashing the
+                                planet, our communities, and our health - and a vision for change</i
+                            >, Free Press, New York.
+                            <a
+                                href="https://www.simonandschuster.net/books/The-Story-of-Stuff/Annie-Leonard/9781439148785"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >Publisher's edition</a
+                            >.
+                        </p>
+                        <h2>WHERE DOES IT GO?</h2>
+                        <p>
+                            In <strong>The Story of Stuff</strong>, Annie Leonard writes, “For the
+                            great majority of these billions of tons of Stuff, there is no ‘away.’
+                            Period.” We often stop thinking about an object as soon as we put it in
+                            the bin, as if it no longer exists. In reality, it remains somewhere,
+                            whether it is buried, burned, recycled, or moved to another place.
+                            <strong>Nothing Goes Away</strong> explores this idea through generative
+                            visuals and sound, revealing the traces that discarded objects continue
+                            to leave behind.
+                        </p>
+                        <p>
+                            This idea connects to SDG 12: Responsible Consumption and Production,
+                            particularly its goal of reducing waste through prevention, reduction,
+                            recycling, and reuse. Waste is not only a problem that begins after
+                            something is thrown away. It is also shaped by the choices we make when
+                            buying, using, and replacing everyday objects. By showing that an
+                            object’s story continues beyond the bin, the project asks viewers to
+                            reconsider their own role in creating waste.
+                        </p>
+                        <p>
+                            Before throwing something away, take a moment to ask where it will go
+                            next. Consider whether you can avoid buying it, repair it, reuse it,
+                            share it with someone else, or recycle it properly. Once an object
+                            leaves our hands, it does not stop existing. We must take responsibility
+                            for what happens to it afterward and make more careful choices before it
+                            becomes waste.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </dialog>
+    </body>
+</html>

@@ -1,0 +1,275 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2521a0;
+    background: #f7b884;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+#experience {
+    position: relative;
+    width: min(100vw, 177.7778vh);
+    aspect-ratio: 16/9;
+    background: #ffd5b6;
+    overflow: hidden;
+}
+#canvas-holder,
+canvas,
+.frame-ui {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.frame-ui {
+    pointer-events: none;
+}
+.frame-ui button {
+    pointer-events: auto;
+}
+button {
+    font: inherit;
+    cursor: pointer;
+    border: 0;
+}
+button:focus-visible {
+    outline: 4px solid #fff6d9;
+    outline-offset: 4px;
+}
+.hint {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: #2923a3;
+    font-size: clamp(9px, 0.9vw, 16px);
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    background: #ffe3c7d9;
+    border-radius: 100px;
+    padding: 0.75em 1.2em;
+}
+.hint span {
+    color: #e9540b;
+}
+dialog {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    max-width: min(1050px, 94vw);
+    max-height: 90vh;
+    color: #272099;
+}
+dialog::backdrop {
+    background: #201460b8;
+}
+.panel {
+    background: #ffdfc3;
+    border: 5px solid #f15a0a;
+    border-radius: 24px;
+    padding: clamp(24px, 4vw, 54px);
+    overflow: auto;
+    max-height: 90vh;
+}
+.panel header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 3px solid #ef641d;
+    padding-bottom: 24px;
+}
+.panel h1 {
+    font-size: clamp(36px, 6vw, 70px);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    margin: 12px 0;
+}
+.panel h1 span {
+    color: #ef5b0b;
+}
+.tagline {
+    font-size: 1.15rem;
+    margin: 0;
+    font-weight: bold;
+}
+.eyebrow,
+.panel h2 {
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    font-size: 0.82rem;
+}
+.panel h2 {
+    color: #eb570b;
+    margin: 2em 0 0.7em;
+}
+.panel header button {
+    align-self: flex-start;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background: #ed5a0c;
+    color: white;
+    font-size: 32px;
+    line-height: 1;
+    flex: none;
+}
+.panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(30px, 6vw, 80px);
+}
+.panel p,
+.panel dd {
+    line-height: 1.6;
+}
+.panel dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 1em;
+}
+.panel dd {
+    margin: 0;
+}
+.sdg {
+    margin-top: 2em;
+    background: #2521a0;
+    color: #fff0d7;
+    padding: 22px;
+    border-radius: 14px;
+}
+.sdg span {
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+.sdg h2 {
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: #fff0d7;
+    margin: 0.4em 0;
+}
+.sdg p {
+    margin: 0;
+}
+.panel blockquote {
+    margin: 2em 0 0;
+    color: #eb570b;
+    font-weight: 900;
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+.panel cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.85rem;
+    margin-top: 1em;
+    color: #2923a3;
+}
+.reference-note {
+    font-size: 0.85rem;
+}
+@media (max-width: 650px) {
+    .panel-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .panel {
+        border-radius: 16px;
+    }
+    .hint {
+        font-size: 9px;
+    }
+}
+@font-face {
+    font-family: "Sue Ellen Francisco";
+    src: url("assets/fonts/SueEllenFrancisco-Regular.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 400;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* The ambient canvas continues the artwork beyond the 16:9 stage. */
+:root,
+body {
+    background: #ffd5b6;
+}
+#ambient {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+#experience {
+    isolation: isolate;
+}
+
+#ambient {
+    z-index: 0;
+}
+#experience {
+    z-index: 1;
+}
+
+/* The navigation appears only on the landing page. */
+.landing-nav {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    display: flex;
+    align-items: center;
+    gap: clamp(6px, 0.7vw, 14px);
+    pointer-events: auto;
+}
+.landing-nav button {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(32px, 3vw, 54px);
+    padding: 0.22em 1em;
+    border-radius: 999px;
+    color: #fff4dd;
+    font-family: "Sue Ellen Francisco", cursive;
+    font-size: clamp(18px, 1.7vw, 30px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-shadow:
+        0.35px 0 currentColor,
+        -0.35px 0 currentColor;
+    transition:
+        transform 0.2s,
+        filter 0.2s;
+}
+.landing-nav button span {
+    display: block;
+    line-height: 1;
+    transform: translateY(0.15em);
+}
+.landing-nav button:hover {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+}
+.landing-nav button:active {
+    transform: scale(0.97);
+}
+.explore-button {
+    background: #2420a5;
+}
+.about-button {
+    background: #ed5a0c;
+}
